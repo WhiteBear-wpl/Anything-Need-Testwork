@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.uv/
+.venv/
+venv/
+
+# 环境变量（绝对不能提交）
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# Playwright
+playwright-report/
+test-results/
+
+# 测试证据（可能很大，按需提交）
+assets/evidence/
+!assets/evidence/.gitkeep
+
+# 覆盖率报告
+htmlcov/
+.coverage
+.coverage.*
+
+# 数据库
+*.db
+*.sqlite3
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+
+# Docker
+docker-compose.override.yml
+
+# Alembic
+backend/alembic/versions/*.pyc

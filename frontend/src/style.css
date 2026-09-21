@@ -1,0 +1,54 @@
+:root {
+  font-family: Inter, 'Segoe UI', 'PingFang SC', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background: #eef3ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.el-card {
+  border-radius: 18px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.04) !important;
+}
+
+.el-table th {
+  background: #f8fafc !important;
+}
+
+.el-button {
+  border-radius: 10px !important;
+}
+
+.el-input__wrapper,
+.el-select,
+.el-textarea__inner {
+  border-radius: 12px !important;
+}
