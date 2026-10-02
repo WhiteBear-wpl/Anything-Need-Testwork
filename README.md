@@ -1,6 +1,6 @@
 <div align="center">
 
-# AITC · AI Test Case Studio
+# Anything-Need-Testwork
 
 **从需求文档到可执行测试用例的 AI 测试工程平台**
 
@@ -19,11 +19,11 @@
 
 ---
 
-![AITC：从需求到测试资产的 AI 测试工程闭环](docs/assets/aitc-project-highlights.png)
+![Anything-Need-Testwork：从需求到测试资产的 AI 测试工程闭环](docs/assets/aitc-project-highlights.png)
 
 ## 面试官速览
 
-> **项目定位：** AITC 是一个 AI 测试用例生成与管理平台，将需求理解、知识增强、多 Skill 生成、自动质检、人工评审和测试资产沉淀连接为可恢复、可追溯的工程闭环。
+> **项目定位：** Anything-Need-Testwork 是一个 AI 测试用例生成与管理平台，将需求理解、知识增强、多 Skill 生成、自动质检、人工评审和测试资产沉淀连接为可恢复、可追溯的工程闭环。
 
 **技术栈：** Python · FastAPI · SQLAlchemy · SQLite · React · Vite · LangGraph · LangChain · Chroma · Pytest
 
@@ -38,17 +38,17 @@
 
 生成任务完成后统一展示规则质检、覆盖率、AI Judge 评分与疑似幻觉统计；测试人员可以筛选冒烟集，并对候选用例执行编辑、采纳或驳回。
 
-![AITC AI 用例生成与评审](docs/assets/aitc-generation-review.png)
+![Anything-Need-Testwork AI 用例生成与评审](docs/assets/aitc-generation-review.png)
 
 ### AI 测试助手
 
 测试助手可以在对话中启动生成任务、查询实时进度，并将生成结果回流到同一套评审流程。
 
-![AITC AI 测试助手](docs/assets/aitc-agent-assistant.png)
+![Anything-Need-Testwork AI 测试助手](docs/assets/aitc-agent-assistant.png)
 
 ## 项目简介
 
-AITC 面向测试工程师与测试负责人，解决三个典型问题：
+Anything-Need-Testwork 面向测试工程师与测试负责人，解决三个典型问题：
 
 - 从 PRD 到测试用例需要大量重复整理，交付周期长。
 - 用例覆盖依赖个人经验，边界、异常和专项场景容易遗漏。
@@ -147,7 +147,7 @@ AITC 面向测试工程师与测试负责人，解决三个典型问题：
 
 ## AI 测试助手
 
-测试助手不是独立的聊天 Demo，而是 AITC 的第二个业务入口：
+测试助手不是独立的聊天 Demo，而是 Anything-Need-Testwork 的第二个业务入口：
 
 ```text
 用户问题 / 需求附件
@@ -188,8 +188,8 @@ AITC 面向测试工程师与测试负责人，解决三个典型问题：
 ### 获取代码
 
 ```bash
-git clone https://github.com/xiayiyang831xyy/AITC-AI-Test-Case-Studio.git
-cd AITC-AI-Test-Case-Studio
+git clone https://github.com/WhiteBear-wpl/Anything-Need-Testwork.git
+cd Anything-Need-Testwork
 ```
 
 ### Windows 一键启动
@@ -284,7 +284,7 @@ npm test
 ## 代码导航
 
 ```text
-AITC/
+Anything-Need-Testwork/
 ├── backend/
 │   ├── app/
 │   │   ├── api/              # FastAPI 路由与资源鉴权
