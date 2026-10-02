@@ -38,17 +38,17 @@
 
 生成任务完成后统一展示规则质检、覆盖率、AI Judge 评分与疑似幻觉统计；测试人员可以筛选冒烟集，并对候选用例执行编辑、采纳或驳回。
 
-![Anything-Need-Testwork AI 用例生成与评审](docs/assets/aitc-generation-review.png)
+![WhiteBear-Test AI 用例生成与评审](docs/assets/aitc-generation-review.png)
 
 ### AI 测试助手
 
 测试助手可以在对话中启动生成任务、查询实时进度，并将生成结果回流到同一套评审流程。
 
-![Anything-Need-Testwork AI 测试助手](docs/assets/aitc-agent-assistant.png)
+![WhiteBear-Test AI 测试助手](docs/assets/aitc-agent-assistant.png)
 
 ## 项目简介
 
-Anything-Need-Testwork 面向测试工程师与测试负责人，解决三个典型问题：
+WhiteBear-Test 面向测试工程师与测试负责人，解决三个典型问题：
 
 - 从 PRD 到测试用例需要大量重复整理，交付周期长。
 - 用例覆盖依赖个人经验，边界、异常和专项场景容易遗漏。
@@ -169,7 +169,7 @@ Anything-Need-Testwork 面向测试工程师与测试负责人，解决三个典
 
 ## AI 测试助手
 
-测试助手不是独立的聊天 Demo，而是 Anything-Need-Testwork 的第二个业务入口：
+测试助手不是独立的聊天 Demo，而是 WhiteBear-Test 的第二个业务入口：
 
 ```text
 用户问题 / 需求附件
@@ -206,6 +206,8 @@ Anything-Need-Testwork 面向测试工程师与测试负责人，解决三个典
 - Windows、macOS 或 Linux
 
 项目默认支持 Mock 模式：保持 `LLM_API_KEY` 为空且 `LLM_MOCK_MODE=true`，无需模型 Key 即可体验主要生成与评测流程。
+
+> **快速体验账号**（Mock 模式内置）：`demo_admin` / `nini123456`。登录后可直接体验工作台、项目 Wiki、总 Wiki 复用与 AI 测试骨架生成。
 
 ### 获取代码
 
@@ -309,9 +311,9 @@ npm test
 Anything-Need-Testwork/
 ├── backend/
 │   ├── app/
-│   │   ├── api/              # FastAPI 路由与资源鉴权
-│   │   ├── models/           # SQLAlchemy 领域模型
-│   │   ├── services/         # 业务服务、RAG、评测与质量逻辑
+│   │   ├── api/              # FastAPI 路由与资源鉴权（含 wiki.py / skeleton.py）
+│   │   ├── models/           # SQLAlchemy 领域模型（含 wiki.py / skeleton.py）
+│   │   ├── services/         # 业务服务、RAG、评测与质量逻辑（含 wiki_service / skeleton_service）
 │   │   ├── ai/               # 模型、Embedding、Chroma 与 Retriever 适配
 │   │   ├── skills/           # Manifest 驱动的 AI Skill 插件
 │   │   ├── workflows/        # LangGraph 生成工作流
@@ -320,7 +322,7 @@ Anything-Need-Testwork/
 │   ├── benchmarks/           # RAG 与生成效果实验
 │   └── tests/                # 后端单元与集成测试
 ├── web/
-│   ├── src/pages/            # 项目、生成、知识库、评测、助手等页面
+│   ├── src/pages/            # 项目、生成、知识库、评测、助手、Wiki、测试骨架等页面
 │   ├── src/components/       # 覆盖矩阵、脑图、评测卡片等组件
 │   ├── src/services/         # Axios 与 SSE API 客户端
 │   └── tests/                # 前端逻辑测试
