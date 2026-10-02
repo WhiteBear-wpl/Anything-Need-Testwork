@@ -1,0 +1,33 @@
+name: api_test
+version: "1.0.0"
+title: 接口测试
+description: 参数校验、响应格式、状态码、幂等性、并发等接口专项用例
+category: specialist
+stage: generation
+tags: [api, specialist]
+
+ui:
+  selectable: true
+  group: 专项测试
+  icon: api
+
+entrypoint: handler:run
+input_model: schemas:ApiTestInput
+output_model: schemas:ApiTestOutput
+execution_order: 20
+timeout_seconds: 420
+
+policy:
+  max_cases: 5
+  default_prompt_version: v1
+  prompt_versions:
+    v1: prompt.md
+
+inputs:
+  feature_item:
+    type: object
+    required: true
+
+outputs:
+  cases:
+    type: array

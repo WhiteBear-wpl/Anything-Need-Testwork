@@ -1,0 +1,25 @@
+name: requirement_parser
+version: "1.0.0"
+title: 需求解析
+description: 从 PRD 文本提取结构化功能点
+category: core
+stage: requirement
+tags: [requirement, core]
+
+ui:
+  selectable: false
+
+entrypoint: handler:run
+input_model: schemas:RequirementParserInput
+output_model: schemas:RequirementParserOutput
+execution_order: 100
+timeout_seconds: 420
+
+inputs:
+  raw_content:
+    type: string
+    required: true
+
+outputs:
+  items:
+    type: array

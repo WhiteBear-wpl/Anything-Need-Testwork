@@ -1,0 +1,45 @@
+name: case_writer
+version: "2.0.0"
+title: 综合用例生成
+description: 根据功能点生成完整测试用例，并标记其中的冒烟用例
+category: core
+stage: generation
+tags: [testcase, core]
+
+ui:
+  selectable: false
+
+entrypoint: handler:run
+input_model: schemas:CaseWriterInput
+output_model: schemas:CaseWriterOutput
+execution_order: 100
+timeout_seconds: 420
+
+inputs:
+  feature_item:
+    type: object
+    required: true
+  strategy:
+    type: string
+    enum: [full, quick]
+    default: full
+
+outputs:
+  cases:
+    type: array
+
+strategies:
+  full:
+    title: 完整用例
+    description: 覆盖功能、边界与异常，并自动标记其中的冒烟用例
+    prompt: prompts/write.md
+    min_cases_per_feature: 5
+    max_cases_per_feature: 12
+    recommended: true
+  quick:
+    title: 快速冒烟
+    description: 只生成核心主路径冒烟用例，每个功能点 2～4 条，省时省成本
+    prompt: prompts/write.md
+    min_cases_per_feature: 2
+    max_cases_per_feature: 4
+    recommended: false

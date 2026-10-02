@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+*.db
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Local agent / editor metadata
+/.agents/
+/.workbuddy/
+
+# Python and test caches
+.pytest_cache/
+
+# Local temporary workspaces and diagnostics
+/.aitc-temp/
+/.tmp*/
+/tmp/
+/backend/tmp*/
+
+# Uploads
+uploads/
+
+# Playwright CLI artifacts
+.playwright-cli/
+
+# 本地数据（SQLite 含 API Key、Chroma 含知识库原文向量）
+backend/data/
+
+# 测试运行输出
+output/
+
+# Autotest
+autotest/.browsers/
+autotest/ui/artifacts/
+autotest/reports/
+autotest/test-results/
+
+# Generated vector stores embedded in evaluation artifacts
+docs/evaluations/**/vector-store/
+
+# Generated evaluation runs may contain local test corpora and model outputs
+docs/evaluations/**/raw-*.json
+docs/evaluations/**/summary.json
+
+# Local agent planning artifacts; project documentation lives outside this directory
+/docs/superpowers/
+
+# Local career / audit artifacts unrelated to the project source
+/面试拷打复盘报告_*.md
+/resume-audit-report*
+
+# Stray root lockfile; the frontend lockfile under web/ is required
+/package-lock.json
+
+# Local README review artifacts (copy the approved draft into README.md)
+/README_GITHUB_DRAFT.md
+/docs/superpowers/specs/2026-08-27-github-readme-design.md
+/docs/superpowers/plans/2026-08-27-github-readme.md

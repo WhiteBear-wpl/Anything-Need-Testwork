@@ -1,0 +1,25 @@
+name: test_proposal
+version: "1.0.0"
+title: 测试提案
+description: 根据需求文档生成测试范围（测什么/不测什么）与风险提案
+category: utility
+stage: requirement
+tags: [proposal, analysis]
+
+ui:
+  selectable: false
+
+entrypoint: handler:run
+input_model: schemas:TestProposalInput
+output_model: schemas:TestProposalOutput
+execution_order: 100
+timeout_seconds: 420
+
+inputs:
+  raw_content:
+    type: string
+    required: true
+
+outputs:
+  scope:
+    type: object

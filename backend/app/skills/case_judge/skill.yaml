@@ -1,0 +1,28 @@
+name: case_judge
+version: "1.0.0"
+title: AI 用例评分
+description: 按相关性、可执行性、可判定性对生成用例批量打分，并标记疑似幻觉
+category: quality
+stage: review
+tags: [judge, quality, evaluation]
+
+ui:
+  selectable: false
+
+entrypoint: handler:run
+input_model: schemas:CaseJudgeInput
+output_model: schemas:CaseJudgeOutput
+execution_order: 100
+timeout_seconds: 420
+
+inputs:
+  feature_item:
+    type: object
+    required: true
+  cases:
+    type: array
+    required: true
+
+outputs:
+  judgements:
+    type: array
