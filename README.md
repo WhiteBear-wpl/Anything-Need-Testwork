@@ -1,10 +1,10 @@
 <div align="center">
 
-# Anything-Need-Testwork
+# WhiteBear-Test
 
-**从需求文档到可执行测试用例的 AI 测试工程平台**
+**AI 接口自动化测试工作台：从需求文档到可执行测试用例的完整工程闭环**
 
-将需求结构化、RAG 知识增强、多 Agent 用例生成、质量评测、人工评审与测试执行串成一条可追溯、可恢复的生产链路。
+将需求结构化、RAG 知识增强、多 Agent 用例生成、质量评测、人工评审与测试执行串成一条可追溯、可恢复的生产链路；每个项目以「项目空间」组织，自带 Wiki 地图与可初始化的自动化测试骨架。
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)
@@ -19,11 +19,11 @@
 
 ---
 
-![Anything-Need-Testwork：从需求到测试资产的 AI 测试工程闭环](docs/assets/aitc-project-highlights.png)
+![WhiteBear-Test：从需求到测试资产的 AI 测试工程闭环](docs/assets/aitc-project-highlights.png)
 
 ## 面试官速览
 
-> **项目定位：** Anything-Need-Testwork 是一个 AI 测试用例生成与管理平台，将需求理解、知识增强、多 Skill 生成、自动质检、人工评审和测试资产沉淀连接为可恢复、可追溯的工程闭环。
+> **项目定位：** WhiteBear-Test 是一个 AI 接口自动化测试工作台，以「项目空间」为核心组织测试资产，将需求理解、知识增强、多 Skill 生成、自动质检、人工评审、Wiki 沉淀与测试骨架初始化连接为可恢复、可追溯的工程闭环。
 
 **技术栈：** Python · FastAPI · SQLAlchemy · SQLite · React · Vite · LangGraph · LangChain · Chroma · Pytest
 
@@ -67,6 +67,10 @@ Anything-Need-Testwork 面向测试工程师与测试负责人，解决三个典
 
 | 模块 | 能力 |
 |---|---|
+| 工作台 / 项目空间 | 以项目为单位的独立空间，统一承载概览、AI 生成、用例、任务、Wiki、测试骨架、知识库与生成记录 |
+| 项目 Wiki | 每个项目独立的树形 Wiki 地图，Markdown 编写与实时预览，支持级联新建/重命名/删除 |
+| 总 Wiki 复用 | 工作台总 Wiki 沉淀通用规范，页面（含全部子页）可一键复制到任意项目复用 |
+| 测试骨架初始化 | 按语言生成可直接运行的接口测试骨架，支持静态模板与 AI 驱动定制，文件树浏览与在线编辑 |
 | 需求结构化 | 支持文本、Markdown、Word 和 FeatureList 导入，将 PRD 拆解为可编辑、可选择的功能点 |
 | 用例生成 | 完整覆盖与快速冒烟两种策略，支持安全、接口等专项 Skill 叠加 |
 | 知识增强 | 项目级知识库，采用向量检索、BM25、RRF 与可选 Rerank 的混合召回链路 |
@@ -75,6 +79,24 @@ Anything-Need-Testwork 面向测试工程师与测试负责人，解决三个典
 | 运行治理 | 持久化 AgentRun、独立 Worker、租约心跳、取消重试、预算控制和事件追踪 |
 | 测试管理 | 正式用例库、脑图视图、测试任务/批次、执行结果、缺陷记录与导出 |
 | 离线评测 | 固化样本、模型与 Skill 快照，对生成质量、召回、重复和成本进行回归对比 |
+
+## 项目空间、Wiki 与测试骨架
+
+除「需求 → 用例 → 执行」的主链路外，WhiteBear-Test 将工程组织能力也内置进平台：
+
+```text
+工作台（总 Wiki：跨项目复用规范）
+   └── 项目空间
+        ├── 概览 / AI 生成 / 项目用例 / 测试任务
+        ├── 项目 Wiki（树形地图 + Markdown，可复制总 Wiki 页面进来）
+        ├── 测试骨架（Python / Node.js / Java，模板或 AI 定制）
+        ├── 知识库 / 生成记录
+```
+
+- **工作台**：以项目卡片汇总每个空间的 Wiki 页数与骨架状态，一键进入总 Wiki 或新建项目。
+- **总 Wiki 复用**：通用测试规范沉淀在工作台总 Wiki，复制到项目即完成团队规范下发，无需重复编写。
+- **测试骨架**：为项目初始化一套可直接 `pytest / jest` 运行的文件树；「AI 驱动定制」会基于项目信息生成定制 README 与测试说明。
+- 后端为 Wiki 与骨架提供完整 REST 接口与数据模型（`wiki_pages`、`project_skeletons`），与主链路同一套鉴权与项目隔离。
 
 ## 技术亮点
 
