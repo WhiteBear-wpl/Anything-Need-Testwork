@@ -32,6 +32,18 @@
 3. **项目级混合 RAG 与引用溯源**：将业务规则、接口文档和历史缺陷按 Markdown 标题路径与文本长度切片，使用向量检索、BM25、RRF 融合与可选 Rerank 召回 Top-K 知识；精排失败时降级到融合结果，并把引用来源随生成结果保存。[混合检索](backend/app/services/knowledge_service.py) · [Retriever 适配](backend/app/ai/retrievers.py)
 4. **11 工具测试 Agent 与运行治理**：基于 LangGraph 自定义 ReAct 循环封装 6 个查询工具和 5 个生成流水线工具，通过 SSE 展示工具调用过程，并以 `interrupt + checkpoint` 控制写操作审批与断点恢复；统一 `AgentRun`、Worker 队列、租约心跳、预算、取消、重试和事件追踪，使生成与评测任务具备可观测、可治理的运行边界。[Agent Tools](backend/app/agent/tools.py) · [Agent Runtime](backend/app/agent_runtime/)
 
+## 架构总览
+
+![WhiteBear-Test 系统架构](docs/assets/whitebear-architecture.svg)
+
+## 功能演示
+
+完整操作演示：登录 → 工作台 → 工作台总 Wiki → 复制规范页到项目（跨项目复用）→ 项目 Wiki → AI 测试骨架 → 回到工作台查看最新状态。
+
+<video src="docs/assets/whitebear-demo.mp4" width="720" controls preload="metadata"></video>
+
+![WhiteBear-Test 功能演示 GIF](docs/assets/whitebear-demo.gif)
+
 ## 项目截图
 
 ### AI 用例生成与评审
