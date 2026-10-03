@@ -24,18 +24,18 @@ if not exist .env (
 )
 
 echo ==========================================
-echo   AITC — 启动前后端与 Agent Worker
+echo   WhiteBear-Test — 启动前后端与 Agent Worker
 echo ==========================================
 echo.
 
-echo [AITC] 启动后端 http://localhost:8000 ...
-start "AITC Backend" /D "%~dp0backend" cmd /k "venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000"
+echo [WhiteBear-Test] 启动后端 http://localhost:8000 ...
+start "WhiteBear-Test Backend" /D "%~dp0backend" cmd /k "venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000"
 
-echo [AITC] 启动 Agent Worker ...
-start "AITC Worker" /D "%~dp0backend" cmd /k "venv\Scripts\python.exe -m app.worker"
+echo [WhiteBear-Test] 启动 Agent Worker ...
+start "WhiteBear-Test Worker" /D "%~dp0backend" cmd /k "venv\Scripts\python.exe -m app.worker"
 
-echo [AITC] 启动前端 http://localhost:5173 ...
-start "AITC Frontend" /D "%~dp0web" cmd /k "npm run dev"
+echo [WhiteBear-Test] 启动前端 http://localhost:5173 ...
+start "WhiteBear-Test Frontend" /D "%~dp0web" cmd /k "npm run dev"
 
 echo.
 echo ==========================================

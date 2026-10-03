@@ -7,8 +7,8 @@ from app.config import BASE_DIR, settings
 
 
 CHECKPOINT_PATH = Path(
-    settings.aitc_langgraph_checkpoint_path
-    or os.environ.get("AITC_LANGGRAPH_CHECKPOINT_PATH", "")
+    settings.wb_langgraph_checkpoint_path
+    or os.environ.get("WB_LANGGRAPH_CHECKPOINT_PATH", "")
     or BASE_DIR / "data" / "langgraph_checkpoints.sqlite"
 )
 

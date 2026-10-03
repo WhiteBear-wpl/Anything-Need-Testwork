@@ -45,22 +45,25 @@ async def generate_skeleton(
     db: Session = Depends(get_db),
 ):
     project = _owned_project_or_404(db, project_id)
-    # 允许生成时覆盖 base_url（不改项目本身）
+    # 允许生成时覆盖 base_url（仅本次生成，不修改项目本身）
     if data.base_url:
-        ctx_base = data.base_url
         if not project.slug:
             project.slug = project.name
-        project.base_url = ctx_base
+            db.commit()
+        # 用临时变量传递给 service，不持久化 base_url
+        original_base_url = project.base_url
+        project.base_url = data.base_url
+        skeleton = await skeleton_service.save_skeleton(
+            db,
+            current_user_id(db),
+            project,
+            language=data.language,
+            framework=data.framework,
+            mode=data.mode,
+        )
+        project.base_url = original_base_url
         db.commit()
-    skeleton = await skeleton_service.save_skeleton(
-        db,
-        current_user_id(db),
-        project,
-        language=data.language,
-        framework=data.framework,
-        mode=data.mode,
-    )
-    return skeleton
+        return skeleton
 
 
 @router.patch("/{project_id}/skeleton/files", response_model=SkeletonOut)

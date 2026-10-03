@@ -7,8 +7,8 @@ from app.config import BASE_DIR, settings
 
 
 CHECKPOINT_PATH = Path(
-    settings.aitc_agent_checkpoint_path
-    or os.environ.get("AITC_AGENT_CHECKPOINT_PATH", "")
+    settings.wb_agent_checkpoint_path
+    or os.environ.get("WB_AGENT_CHECKPOINT_PATH", "")
     or BASE_DIR / "data" / "agent_checkpoints.sqlite"
 )
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // ---- 登录认证 ----
-const AUTH_KEY = 'aitc_auth';
+const AUTH_KEY = 'wb_auth';
 const APP_BASE = import.meta.env.BASE_URL || '/';
 const API_BASE = `${APP_BASE.replace(/\/$/, '')}/api`;
 

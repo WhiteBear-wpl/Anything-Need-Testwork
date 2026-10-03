@@ -13,7 +13,7 @@ from app.services.settings_service import RuntimeModelConfig
 
 
 VECTOR_COLLECTION_VERSION = "lc_v1"
-CHROMA_DIR = Path(os.environ.get("AITC_CHROMA_DIR", "") or BASE_DIR / "data" / "chroma")
+CHROMA_DIR = Path(os.environ.get("WB_CHROMA_DIR", "") or BASE_DIR / "data" / "chroma")
 
 
 def vector_collection_name(project_id: int, config: RuntimeModelConfig) -> str:

@@ -14,8 +14,8 @@ from app.services.knowledge_service import (
 )
 
 
-class AITCHybridRetriever(BaseRetriever):
-    """把 AITC 现有向量 + BM25 + RRF + Rerank 检索包装成 LangChain Retriever。"""
+class HybridRetriever(BaseRetriever):
+    """把现有向量 + BM25 + RRF + Rerank 检索包装成 LangChain Retriever。"""
 
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
@@ -33,7 +33,7 @@ class AITCHybridRetriever(BaseRetriever):
         *,
         run_manager: CallbackManagerForRetrieverRun,
     ) -> list[Document]:
-        raise RuntimeError("AITCHybridRetriever 仅支持异步调用，请使用 ainvoke()")
+        raise RuntimeError("HybridRetriever 仅支持异步调用，请使用 ainvoke()")
 
     async def _aget_relevant_documents(
         self,

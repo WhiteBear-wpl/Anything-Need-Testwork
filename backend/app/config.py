@@ -43,9 +43,9 @@ class Settings(BaseSettings):
 
     database_url: str = f"sqlite:///{BASE_DIR / 'data' / 'app.db'}"
     # LangGraph 运行检查点与业务库分开保存，便于失败任务恢复。
-    aitc_langgraph_checkpoint_path: str = ""
+    wb_langgraph_checkpoint_path: str = ""
     # 测试助手的人机确认检查点单独保存，避免与批量生成任务互相影响。
-    aitc_agent_checkpoint_path: str = ""
+    wb_agent_checkpoint_path: str = ""
     # Runtime V2 requires both this global kill switch and a project-level opt-in.
     agent_runtime_v2_enabled: bool = False
     unified_agent_runtime_enabled: bool = False

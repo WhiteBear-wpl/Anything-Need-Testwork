@@ -6,7 +6,7 @@ import AgentChat from '../components/AgentChat';
 import PageHeader from '../components/PageHeader';
 import { getHomeOverview } from '../services/api';
 
-const LAST_PROJECT_KEY = 'aitc_agent_last_project';
+const LAST_PROJECT_KEY = 'wb_agent_last_project';
 
 export default function AgentAssistant() {
   const [projects, setProjects] = useState([]);

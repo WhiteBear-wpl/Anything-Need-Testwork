@@ -33,7 +33,7 @@ _failed_logins: dict[str, tuple[int, datetime | None]] = {}
 _login_lock = Lock()
 _registration_attempts: dict[str, list[datetime]] = {}
 _registration_lock = Lock()
-_dummy_password_hash = hash_password("aitc-dummy-password")
+_dummy_password_hash = hash_password("wb-dummy-password")
 
 
 class LoginRequest(BaseModel):

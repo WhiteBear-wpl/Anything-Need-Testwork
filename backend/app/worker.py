@@ -42,14 +42,14 @@ def worker_process_lock(lock_path: str | Path = DEFAULT_LOCK_PATH):
             try:
                 msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
             except OSError as exc:
-                raise RuntimeError("AITC Agent Worker is already running") from exc
+                raise RuntimeError("WhiteBear-Test Agent Worker is already running") from exc
         else:
             import fcntl
 
             try:
                 fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
             except OSError as exc:
-                raise RuntimeError("AITC Agent Worker is already running") from exc
+                raise RuntimeError("WhiteBear-Test Agent Worker is already running") from exc
         yield
     finally:
         try:

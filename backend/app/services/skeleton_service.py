@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import httpx
 from sqlalchemy.orm import Session
@@ -135,7 +136,7 @@ def _mock_tailor(project, files: list[dict]) -> list[dict]:
     """Mock 模式下产生确定性的 AI 定制内容：补一段说明 + 一个项目专属测试文件。"""
     slug = (project.slug or "").strip() or "api-test"
     desc = (project.description or "").strip() or "接口自动化测试项目"
-    tailor = f"# {slug} · AI 定制\n\n根据项目「{project.name}」生成的测试说明：\n\n- 目标：{desc}\n- 基础地址：{project.base_url or 'https://api.example.com'}\n- 由 AITC AI 引擎基于 LangGraph + 7 大 Skill 定制，而非纯静态模板。\n\n建议优先覆盖：登录鉴权、核心业务链路、异常与边界场景。"
+    tailor = f"# {slug} · AI 定制\n\n根据项目「{project.name}」生成的测试说明：\n\n- 目标：{desc}\n- 基础地址：{project.base_url or 'https://api.example.com'}\n- 由 WhiteBear-Test AI 引擎基于 LangGraph + Skill 插件定制，而非纯静态模板。\n\n建议优先覆盖：登录鉴权、核心业务链路、异常与边界场景。"
     ai_file = {
         "path": f"{slug}/tests/test_ai_tailored.py",
         "content": f'"""AI 驱动生成的项目专属冒烟用例。"""\nimport pytest\nfrom utils.http_client import HttpClient\n\n\n# 项目：{project.name}\n# 目标：{desc}\ndef test_ai_tailored_health(client: HttpClient) -> None:\n    """项目专属链路冒烟：服务可达。"""\n    resp = client.get("/health")\n    assert resp.status_code == 200\n',
@@ -204,7 +205,7 @@ async def save_skeleton(
         skeleton.framework = resolved_framework
         skeleton.mode = mode
         skeleton.files = json.dumps(files, ensure_ascii=False)
-        skeleton.generated_at = __import__("datetime").datetime.now()
+        skeleton.generated_at = datetime.now()
     db.commit()
     db.refresh(skeleton)
     return skeleton

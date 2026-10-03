@@ -3,7 +3,7 @@ import { Button, Drawer, Tooltip } from 'antd';
 import { useRef, useState } from 'react';
 import AgentChat from './AgentChat';
 
-const FAB_POS_KEY = 'aitc_agent_fab_pos';
+const FAB_POS_KEY = 'wb_agent_fab_pos';
 const FAB_SIZE = 48;
 const FAB_MARGIN = 8;
 const DRAG_THRESHOLD = 5;

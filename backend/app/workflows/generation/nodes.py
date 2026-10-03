@@ -5,7 +5,7 @@ from dataclasses import replace
 
 from langchain_core.exceptions import OutputParserException
 
-from app.ai.retrievers import AITCHybridRetriever, documents_to_knowledge
+from app.ai.retrievers import HybridRetriever, documents_to_knowledge
 from app.agent_runtime.contracts import BudgetExhausted, RuntimeCancelled
 from app.database import SessionLocal
 from app.models.generation import (
@@ -348,7 +348,7 @@ async def retrieve_knowledge(state: GenerationState) -> dict:
         db.commit()
         model_config = _runtime_model_config(db, task)
         retrieval = state.get("retrieval") or {}
-        retriever = AITCHybridRetriever(
+        retriever = HybridRetriever(
             db=db,
             project_id=state["project_id"],
             runtime_config=model_config,

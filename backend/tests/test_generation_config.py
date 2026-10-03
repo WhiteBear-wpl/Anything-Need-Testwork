@@ -157,11 +157,11 @@ class GenerationConfigSnapshotTests(unittest.TestCase):
 
 class RetrieverSnapshotTests(unittest.IsolatedAsyncioTestCase):
     async def test_hybrid_retriever_forwards_frozen_retrieval_parameters(self):
-        from app.ai.retrievers import AITCHybridRetriever
+        from app.ai.retrievers import HybridRetriever
 
         with patch("app.ai.retrievers.retrieve", new_callable=AsyncMock) as retrieve:
             retrieve.return_value = []
-            retriever = AITCHybridRetriever(
+            retriever = HybridRetriever(
                 db=object(),
                 project_id=9,
                 top_k=7,

@@ -169,7 +169,7 @@ def _load_local_symbol(skill_dir: Path, reference: str, skill_name: str) -> Any:
     if not module_path.is_file():
         raise SkillDefinitionError(f"Skill `{skill_name}` missing local module: {module_name}.py")
 
-    unique_module_name = f"aitc_skill_{skill_name}_{module_name}_{abs(hash(module_path))}"
+    unique_module_name = f"wb_skill_{skill_name}_{module_name}_{abs(hash(module_path))}"
     spec = importlib.util.spec_from_file_location(unique_module_name, module_path)
     if spec is None or spec.loader is None:
         raise SkillDefinitionError(f"Unable to load Skill `{skill_name}` module: {module_name}.py")

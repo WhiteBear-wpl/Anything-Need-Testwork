@@ -32,8 +32,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="AITC",
-    description="AI 测试用例生成与管理平台",
+    title="WhiteBear-Test",
+    description="AI 接口自动化测试工作台",
     version="0.1.0",
     lifespan=lifespan,
     docs_url="/docs" if settings.debug else None,
